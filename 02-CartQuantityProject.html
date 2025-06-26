@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity Project</title>
+  <style>
+    button{
+      font-size:larger;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="update(0)">view cart</button>
+  <button onclick="update(+1)">add to cart</button>
+  <button onclick="update(+2)">+2 to cart</button>
+  <button onclick="update(+3)">+3 to cart</button>
+  <button onclick="update(-1)">remove from cart</button>
+  <button onclick="update(-2)">remove 2 from cart</button>
+  <button onclick="update(-3);">remove 3 from cart</button>
+  <button onclick="cart=0;update(0);">empty cart</button>
+
+  <script>
+    let cart=0;
+    function update(val){
+      cart+=val;
+      if(cart<0)
+      cart=0;
+      console.log(`the cart has ${cart} items`);
+    }
+  </script>
+</body>
+</html>
