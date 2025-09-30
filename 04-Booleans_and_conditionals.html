@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bool and conditionals</title>
+</head>
+<body>
+  <script>
+    //boolean data type
+    let val=true;
+    let val2=false;
+    console.log(typeof val); //boolean
+    console.log(typeof val2); //boolean
+    //falsy values: false, 0, NaN, undefined, Null
+    //truthy values: all except the above
+
+    //Comparison operators: <,>,<=,>=,===,!==
+    //Logical operators: &&,||,!
+
+    //Conditionals
+    /*
+    if(condition){}
+    else if(condition){}
+    else{}
+    */
+    let a=5,b=2;
+    if(a>b)
+      console.log('true');
+    else
+      console.log('false');
+
+    //Ternary operator:::: condition ? true : false ;
+    console.log(1>4?true:false);
+
+    //Guard statement:::: a&&b (if a is false, b will never be executed)
+    (4>5)&&console.log('true');
+  
+    //Default statement:::: a||b (if a is false, b acts as a default value)
+    let temp=0||21;
+    console.log(temp);
+    
+
+    //exercises:
+    let hour=18;
+    if(hour>=6&&hour<=12)
+    console.log('good morning');
+    else if(hour>12&&hour<=17)
+    console.log('afternoon');
+    else
+    console.log('good night');
+  </script>
+
+</body>
+</html>

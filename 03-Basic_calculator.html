@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    button{
+      background-color:rgb(241, 161, 134);
+    }
+    .op{
+      background-color:coral;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <button onclick="update(1)">1</button>
+    <button onclick="update(2);">2</button>
+    <button onclick="update(3)">3</button>
+  </p>
+  <p>
+    <button onclick="update(4)">4</button>
+    <button onclick="update(5)">5</button>
+    <button onclick="update(6)">6</button>
+  </p>
+  <p>
+    <button onclick="update(7)">7</button>
+    <button onclick="update(8)">8</button>
+    <button onclick="update(9)">9</button>
+  </p>
+  <p>
+  <button class="op" onclick="update(' + ')">+</button>
+  <button onclick="update(0)">0</button>
+  <button class="op" onclick="update('=')">=</button>
+  </p>
+
+  <p class="val"></p>
+
+  <script>
+    let calc="";
+    function update(val){
+      if(val==='='){
+        calc=eval(calc);
+        document.querySelector(".val").innerHTML=calc;
+        calc="";
+      }
+      else{
+      calc+=val;
+      document.querySelector(".val").innerHTML=calc;
+      }
+    }
+  </script>
+</body>
+</html>
