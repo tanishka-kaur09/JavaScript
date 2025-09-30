@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    //object syntax: const/let objectName={//property:value pairs};
+    const product={
+      name:'tanni',
+      age:20
+    };
+    
+    console.log(product); //accessing whole object
+    console.log(typeof product);
+
+    console.log(product.name); //accessing one properties of object
+    console.log(product['name']);
+    //Dot notation is used by default but some case requires []
+    const prod={
+      'delivery-time':'12 days'
+    };
+    // console.log(prod.delivery-time); //ERROR
+    console.log(prod['delivery-time']);
+
+    product.age=19;
+    console.log(product.age);
+
+    product.newProp=true; //new peoperty inserted
+    console.log(product);
+
+    delete product.newProp; //deletes property
+    console.log(product);
+
+    //object can have all type of elements(including objects & functions)
+
+    //nested objects (object inside object)
+    const prod1={
+      'delivery-time':'12 days',
+      name:'package',
+      details:{
+        color: 'red',
+        size: 'medium'
+      }
+    };
+    console.log(prod1.details); //accessing nested object
+    console.log(prod1.details.color); //accessing nested object values
+    
+    const prod2={
+      'delivery-time':'12 days',
+      name:'package',
+      details:{
+        color: 'red',
+        size: 'medium'
+      },
+      func: function changesize(){
+        prod2.details.size='large';
+      }
+    };
+    console.log(prod2.details.size);
+    prod2.func();  //function called
+    console.log(prod2.details.size);
+    // console.log(typeof prod2.func);  //function
+  
+
+    //Built in objects
+    //console
+    console.error("error msg");
+    console.log('hello');
+
+    //Math
+    console.log(Math.round(12.3));
+    console.log(Math.ceil(12.3));
+    console.log(Math.floor(12.6));
+    console.log(Math.SQRT2);
+    console.log(Math.PI);
+
+    // JSON (JavaScript Object Notation)
+    // JSON is a lightweight data interchange format
+    // JSON is language independent 
+    // JSON is "self-describing" and easy to understand
+    
+    //converting prod2 obj to JSON
+    const json=JSON.stringify(prod2);
+    console.log(json); //JSON does not support functions and contains "" for every string
+    //to covert JSON to object
+    console.log(JSON.parse(json));
+    //these are the only functions of JSON
+    
+    //localStorage
+    //saves value more permanently
+    //Functions-setItem(k,v),getItem(k),removeItem(key),clear(),key(index)
+    localStorage.setItem("key","value");
+    console.log(localStorage.getItem('key'));
+
+    
+    //MORE ABOUT objects:
+    //1. Auto boxing- jS autoboxes any primitiove value in object so you can access properties or methods
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+    console.log(3.0.toString());
+    console.log('test'.repeat(3));
+    //2. Objects are references, they are only equal if they refer to same location
+    const o1={
+      hello:'hi'
+    };
+    const o2={
+      hello:'hi'
+    };
+    console.log(o1===o2);
+    const o3=o1;
+    console.log(o1===o3);
+    //3. Shortcuts
+    // const hello=o1.hello;
+    const {hello}=o1; //destructuring
+    console.log(hello);
+
+    // const o4={
+    //   func:function fun1(){
+    //     console.log("function");
+    //   }
+    // }
+    const o4={
+      func(){  //shorthand method
+        console.log("function");
+      }
+    }
+    o4.func();
+    
+    o4['hello']='hi'; //add new property
+    console.log(o4);
+  </script>
+</body>
+</html>
